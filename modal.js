@@ -8,24 +8,37 @@ var flickr = false;
 var twitter = false;
 
 
-function savePreferences() {
+function saveMediaPreferences() {
 if ($(":checkbox[name='media_choices']").is(":checked")) {
     if($(":checkbox[id='iTunes']").is(":checked")) {
         iTunes = true;
+        console.log('iTunes call will be made');
     }
     if($(":checkbox[id='videos']").is(":checked")) {
         youTube = true;
+        console.log('Youtube call will be made');
         vine= true;
+        console.log('Vine call will be made');
     }
     if($(":checkbox[id='pictures']").is(":checked")) {
         flickr = true;
+        console.log('Flickr call will be made');
     }
     if($(":checkbox[id='twitter']").is(":checked")) {
         twitter = true;
+        console.log('Twitter call will be made');
     }
+    generatePreferences();
 }
     else {
     alert('please select a choice before continuing');
 }
-    console.log('iTunes call will be made: ' +  iTunes, ' Youtube call will be made: ' + youTube, ' Vine call will be made: ' + vine, ' Flickr call will be made: ' + flickr, ' Twitter call will be made: ' + twitter);
+    }
+
+function generatePreferences() {
+    $('.modal-body').html('');
+    var preferences_header = $('<h4>', {
+        text:'Select up to 5 preferences',
+    });
+    $('.modal-body').append(preferences_header);
 }
