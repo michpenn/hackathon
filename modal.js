@@ -7,6 +7,7 @@ var vine = false;
 var flickr = false;
 var twitter = false;
 var channel_options_array = ['Music', 'Sports', 'News', 'Comedy', 'Animals', 'Dance', 'Food', 'DIY', 'Places', 'Trending', 'Virtual Reality'];
+var selected_preferences = [];
 
 
 function saveMediaPreferences() {
@@ -47,7 +48,7 @@ function generatePreferences() {
 
     for(var i=0; i<=channel_options_array.length; i++) {
         var new_option = $('<div>', {
-            class: 'col-sm-3 option',
+            class: 'col-sm-4 option',
             name: channel_options_array[i],
             text: channel_options_array[i],
         });
@@ -62,5 +63,18 @@ function generatePreferences() {
 
 function registerClick(clicked) {
     console.log('it works');
+    var justClicked = clicked;
+    $(justClicked).toggleClass('clicked');
+    console.log(selected_preferences);
+    console.log(justClicked);
     console.log($(clicked).text());
+selected_preferences.push($(clicked).text());
+    console.log(selected_preferences);
+    for (var i=0; i<selected_preferences.length; i++) {
+        console.log(selected_preferences[i]);
+
+        }
+
+    /*selected_preferences.push($(clicked).text());
+    console.log(selected_preferences); */
 }

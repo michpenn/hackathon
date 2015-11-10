@@ -8,8 +8,19 @@
 }
 
 .option {
+    overflow: hidden;
+    margin-top: 5px;
+    margin-bottom: 4px;
 }
 
 .clicked {
-    border: 1px solid black;
+    border: 1px solid transparent;
+    background-color: #e7a61a;
+    margin-top: 4px;
+    margin-bottom: 3px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    overflow: hidden;
+
 }
