@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
+          type="text/css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="modal.js"></script>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Set Preferences
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Let's Get To Know You</h4>
+            </div>
+            <div class="modal-body">
+                <h5>What are you looking for?</h5>
+
+                <div class="row">
+                    <div class="col-sm-5 media"><input type="checkbox" name="Media" value="Movies"> iTunes Suggestions
+                    </div>
+                    <div class="col-sm-5 media"><input type="checkbox" name="Media" value="Videos"> Videos</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 media"><input type="checkbox" name="Media" value="Pictures"> Pictures</div>
+                    <div class="col-sm-5 media"><input type="checkbox" name="Media" value="Twitter"> Live Twitter
+                        Content
+                    </div>
+                </div>
+                <h5>What are you your interests?</h5>
+
+                <div class="row">
+                    <div class="col-md-5 interest"><input type="checkbox" name="Interest" value="Music"> Music</div>
+                    <div class="col-md-5 interest"><input type="checkbox" name="Interest" value="Sports"> Sports</div>
+                    <div class="col-md-5 interest"><input type="checkbox" name="Interest" value="Gaming"> Gaming</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 interest"><input type="checkbox" name="Interest" value="Movies"> Movies</div>
+                    <div class="col-md-5 interest"><input type="checkbox" name="Interest" value="TV"> TV Shows</div>
+                    <div class="col-md-5 interest"><input type="checkbox" name="Interest" value="News"> News</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Ready For Fun?</button>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
