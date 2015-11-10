@@ -6,6 +6,7 @@
           type="text/css"/>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="modal.js"></script>
+    <link href="modal_style.css" rel="stylesheet" type="text/css"/>
     <meta charset="UTF-8">
     <title></title>
 </head>
@@ -27,38 +28,59 @@
             <div class="modal-body">
                 <h5>What are you looking for?</h5>
 
-                <div class="row">
-                    <div class="col-sm-5 media"><input type="checkbox" name="Media" value="Movies"> iTunes Suggestions
+                <form class="form-inline" role="form">
+                    <div class="row">
+                    <div class="form-group">
+                            <input type="checkbox" class="form-control" name="media_choices" id="iTunes"> iTunes
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" class="form-control" name="media_choices" id="videos"> Videos
+                        </div>
                     </div>
-                    <div class="col-sm-5 media"><input type="checkbox" name="Media" value="Videos"> Videos</div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-5 media"><input type="checkbox" name="Media" value="Pictures"> Pictures</div>
-                    <div class="col-sm-5 media"><input type="checkbox" name="Media" value="Twitter"> Live Twitter
-                        Content
+                    <div class="row">
+                        <div class="form-group">
+                            <input type="checkbox" class="form-control" name="media_choices" id="pictures"> Pictures
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" class="form-control" name="media_choices" id="twitter"> Twitter Feed
+                        </div>
                     </div>
-                </div>
-                <h5>What are you your interests?</h5>
-
-                <div class="row">
-                    <div class="col-md-5 interest"><input type="checkbox" name="Interest" value="Music"> Music</div>
-                    <div class="col-md-5 interest"><input type="checkbox" name="Interest" value="Sports"> Sports</div>
-                    <div class="col-md-5 interest"><input type="checkbox" name="Interest" value="Gaming"> Gaming</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-5 interest"><input type="checkbox" name="Interest" value="Movies"> Movies</div>
-                    <div class="col-md-5 interest"><input type="checkbox" name="Interest" value="TV"> TV Shows</div>
-                    <div class="col-md-5 interest"><input type="checkbox" name="Interest" value="News"> News</div>
-                </div>
-
+                    <button type="button" class="btn btn-info" onclick="savePreferences()">Save So Far</button>
+            </div>
+            <!--
+        <div class="row row_one">
+            <div class="col-sm-5 media"><input type="checkbox" name="Media" value="Movies"> iTunes Suggestions
+            </div>
+            <div class="col-sm-5 .col-sm-offset-1 media"><input type="checkbox" name="Media" value="Videos"> Videos</div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-5 media"><input type="checkbox" name="Media" value="Pictures"> Pictures</div>
+            <div class="col-sm-5 media"><input type="checkbox" name="Media" value="Twitter"> Live Twitter
+                Content
             </div>
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Ready For Fun?</button>
+            </form>
+        <h5>What are you your interests?</h5>
+
+        <div class="row">
+            <div class="col-md-5 interest"><input type="checkbox" name="Interest" value="Music"> Music</div>
+            <div class="col-md-5 interest"><input type="checkbox" name="Interest" value="Sports"> Sports</div>
+            <div class="col-md-5 interest"><input type="checkbox" name="Interest" value="Gaming"> Gaming</div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 interest"><input type="checkbox" name="Interest" value="Movies"> Movies</div>
+            <div class="col-md-5 interest"><input type="checkbox" name="Interest" value="TV"> TV Shows</div>
+            <div class="col-md-5 interest"><input type="checkbox" name="Interest" value="News"> News</div>
+        </div>
+
+    </div>
+</div> -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Ready For Fun?</button>
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 </body>
