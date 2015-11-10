@@ -6,6 +6,7 @@ var youTube = false;
 var vine = false;
 var flickr = false;
 var twitter = false;
+var channel_options_array = ['Music', 'Sports', 'News', 'Comedy', 'Animals', 'Dance', 'Food', 'DIY', 'Places', 'Trending', 'Virtual Reality'];
 
 
 function saveMediaPreferences() {
@@ -38,7 +39,28 @@ if ($(":checkbox[name='media_choices']").is(":checked")) {
 function generatePreferences() {
     $('.modal-body').html('');
     var preferences_header = $('<h4>', {
-        text:'Select up to 5 preferences',
+        text:'Select up to 5 preferences'
     });
-    $('.modal-body').append(preferences_header);
+    var preferences_list = $('<div>', {
+        class: 'preferences_list'
+    });
+
+    for(var i=0; i<=channel_options_array.length; i++) {
+        var new_option = $('<div>', {
+            class: 'col-sm-3 option',
+            name: channel_options_array[i],
+            text: channel_options_array[i],
+        });
+        new_option.on('click', function(){
+            registerClick(this);
+        });
+    $(preferences_list).append(new_option);
+    }
+    $('.modal-body').append(preferences_header, preferences_list);
+}
+
+
+function registerClick(clicked) {
+    console.log('it works');
+    console.log($(clicked).text());
 }
