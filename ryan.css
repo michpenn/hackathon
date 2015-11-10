@@ -1,0 +1,31 @@
+#top-row
+{
+    height: 60vh;
+}
+
+#channel-section, #video-section, #twitter-section
+{
+    height: 100%;
+}
+
+.list-group-item
+{
+    display: flex;
+}
+
+.tweet-item-avatar-image
+{
+    width: 100%;
+    float: left;
+    display: inline-block;
+}
+
+.tweet-item-fullname
+{
+    overflow: hidden;
+}
+
+.tweet-item-text
+{
+    display: inline-block;
+}
