@@ -10,4 +10,7 @@ $(document).ready(function()
     makeAjaxPostJsonCall(new YouTubeAPI_Search('comedy'));
     makeAjaxPostJsonCall(new YouTubeAPI_Search('news'));
     makeAjaxPostJsonCall(new YouTubeAPI_Search('animals'));
+
+    var newTwitterObject = new TwitterAPI_Object_Creator();
+    makeAjaxPostJsonCall(newTwitterObject);
 });
