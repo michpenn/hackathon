@@ -94,4 +94,11 @@ function pickCategories() {
             i++
         }
     }
+
+    searchCategories();
+}
+
+function searchCategories()
+{
+    searchYoutube(selected_preferences);
 }

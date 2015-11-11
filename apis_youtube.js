@@ -160,3 +160,28 @@ function youtubeItemClickHandler($item)
     $('#video-section').html('');
     $('#video-section').append(vid_div);
 }
+
+function searchYoutube(categories)
+{
+    $('.youtube-list-group').html('');
+
+    for (var i = 0; i < categories.length; i++)
+    {
+        createYoutubeCategoryList(categories[i]);
+
+        makeAjaxPostJsonCall(new YouTubeAPI_Search(categories[i]));
+    }
+}
+
+function createYoutubeCategoryList(category)
+{
+    var list_item = $('<li>').addClass('list-group-item list-group-item-info');
+    list_item.attr('data-toggle', 'collapse');
+    list_item.attr('data-target', '#' + category + '-channel-list');
+    list_item.text(category);
+
+    var ul_elem = $('<ul>').addClass('collapse list-group');
+    ul_elem.attr('id', category + '-channel-list');
+
+    $('#channel-list>.youtube-list-group').append(list_item, ul_elem);
+}
