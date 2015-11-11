@@ -3,7 +3,7 @@ strong
     font-size: 0.8vw;
 }
 
-.tweet-item-text, .youtube-headline, .youtube-uploader, .youtube-views
+.tweet-item-text, .youtube-headline, .youtube-uploader, .youtube-views, .itunes-title, .itunes-publisher, .itunes-price
 {
     font-size: 0.8vw;
     margin: 0 0 0 .1vw;
@@ -47,21 +47,21 @@ strong
     width: 100%;
 }
 
-.youtube-item
+.youtube-item, .itunes-item
 {
     width: 100%;
 }
-.youtube-thumbnail
+.youtube-thumbnail, .itunes-thumbnail
 {
     width: 30%;
     display: inline-block;
     float: left;
 }
-.youtube-thumbnail>img
+.youtube-thumbnail>img, .itunes-thumbnail>img
 {
     width: 100%;
 }
-.youtube-info
+.youtube-info, .itunes-info
 {
     width: 70%;
     display: inline-block;;
