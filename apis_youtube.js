@@ -132,7 +132,7 @@ function YouTubeAPI_Search()
      */
     this.api_data =
     {
-        q: 'puppies',
+        q: 'sports',
         maxResults: 10
     };
 
@@ -146,16 +146,14 @@ function YouTubeAPI_Search()
     {
         if (result.success == true)
         {
-            $('#youtube-main').html('');
-            var list_group = $('<ul>');
-            list_group.addClass('list-group');
+            var list_group = $('#sports-channel-list');
+            list_group.html('');
             for (var i = 0; i < result.video.length; i++)
             {
                 var title = result.video[i].title;
                 var vid_id = result.video[i].id;
                 list_group.append(this.createDomElement(title, vid_id, null, null));
             }
-            $('#youtube-main').append(list_group);
         }
     };
 
@@ -179,6 +177,7 @@ function YouTubeAPI_Search()
         var list_group_item = $('<li>').addClass('list-group-item');
         var youtube_item = $('<div>').addClass('youtube-item');
         youtube_item.attr('video-id', id);
+        youtube_item.attr('video-headline', title);
 
         var thumbnail_div = $('<div>').addClass('youtube-thumbnail');
         var src = (thumbnail_url == null ? 'images/logo_youtube.png' : thumbnail_url);
@@ -194,4 +193,24 @@ function YouTubeAPI_Search()
         list_group_item.append(youtube_item);
         return list_group_item;
     };
+}
+
+function youtubeItemClickHandler($item)
+{
+    var vid_div = $('#video-section-div').html('');
+
+    var header = $('<h3>').attr('id', 'data-item-header');
+    header.text($item.attr('video-headline'));
+
+    var src = 'https://www.youtube.com/embed/' + $item.attr('video-id');
+
+    var video = $('<iframe>');
+    video.attr('id', 'youtube-video');
+    video.attr('frameborder', '0');
+    video.attr('src', src);
+
+    vid_div.append(header, video);
+
+    $('#video-section').html('');
+    $('#video-section').append(vid_div);
 }
