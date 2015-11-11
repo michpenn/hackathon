@@ -12,51 +12,51 @@ var selected_formatting = [];
 
 
 function saveMediaPreferences() {
-if ($(":checkbox[name='media_choices']").is(":checked")) {
-    if($(":checkbox[id='iTunes']").is(":checked")) {
-        iTunes = true;
-        console.log('iTunes call will be made');
+    if ($(":checkbox[name='media_choices']").is(":checked")) {
+        if ($(":checkbox[id='iTunes']").is(":checked")) {
+            iTunes = true;
+            console.log('iTunes call will be made');
+        }
+        if ($(":checkbox[id='videos']").is(":checked")) {
+            youTube = true;
+            console.log('Youtube call will be made');
+            vine = true;
+            console.log('Vine call will be made');
+        }
+        if ($(":checkbox[id='pictures']").is(":checked")) {
+            flickr = true;
+            console.log('Flickr call will be made');
+        }
+        if ($(":checkbox[id='twitter']").is(":checked")) {
+            twitter = true;
+            console.log('Twitter call will be made');
+        }
+        generatePreferences();
     }
-    if($(":checkbox[id='videos']").is(":checked")) {
-        youTube = true;
-        console.log('Youtube call will be made');
-        vine= true;
-        console.log('Vine call will be made');
-    }
-    if($(":checkbox[id='pictures']").is(":checked")) {
-        flickr = true;
-        console.log('Flickr call will be made');
-    }
-    if($(":checkbox[id='twitter']").is(":checked")) {
-        twitter = true;
-        console.log('Twitter call will be made');
-    }
-    generatePreferences();
-}
     else {
-    alert('please select a choice before continuing');
-}
+        alert('please select a choice before continuing');
     }
+}
 
 function generatePreferences() {
     $('.modal-body').html('');
     var preferences_header = $('<h4>', {
-        text:'Select up to 5 preferences'
+        text: 'Select up to 5 preferences'
     });
     var preferences_list = $('<div>', {
         class: 'preferences_list'
     });
 
-    for(var i=0; i<=channel_options_array.length; i++) {
+    for (var i = 0; i <= channel_options_array.length; i++) {
         var new_option = $('<div>', {
             class: 'col-sm-4 option',
             name: channel_options_array[i],
             text: channel_options_array[i],
         });
-        new_option.on('click', function(){
+        new_option.on('click', function () {
             registerClick(this);
         });
-    $(preferences_list).append(new_option);
+        $(preferences_list).append(new_option);
     }
     $('.modal-body').append(preferences_header, preferences_list);
 }
@@ -67,29 +67,31 @@ function registerClick(clicked) {
     var justClicked = clicked;
     $(justClicked).toggleClass('clicked');
     console.log($(justClicked).hasClass('clicked'));
-    if($(justClicked).hasClass('clicked')) {
+    if ($(justClicked).hasClass('clicked')) {
         console.log($('.clicked').length);
-        if($('.clicked').length <= 5) {
+        if ($('.clicked').length <= 5) {
             console.log($(clicked).text());
             selected_formatting.push(justClicked);
             console.log(selected_formatting);
         }
-        else{
+        else {
             $(justClicked).toggleClass('clicked');
-            alert('You can only select up to 5 options');}
+            alert('You can only select up to 5 options');
+        }
     }
 }
 
 
-
 function pickCategories() {
-    for(var i=0; i<selected_formatting.length;) {
-        if(selected_formatting[i].classList.contains('clicked')) {
+    for (var i = 0; i < selected_formatting.length;) {
+        if (selected_formatting[i].classList.contains('clicked')) {
             console.log(selected_formatting[i].innerText);
             var selected_category = selected_formatting[i].innerText;
             selected_preferences.push(selected_category);
             i++;
         }
-        else {i++}
+        else {
+            i++
+        }
     }
 }
