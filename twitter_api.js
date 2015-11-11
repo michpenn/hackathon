@@ -9,7 +9,7 @@
 *
 *
 */
-function TwitterAPI_Object_Creator()
+function TwitterAPI_Object_Creator(search)
    {
     /**
      * Enter the URL for this API
@@ -22,7 +22,7 @@ function TwitterAPI_Object_Creator()
      * @type - object
      */
     this.api_data = {
-        search_term: "NBA",
+        search_term: search
     };
 
 

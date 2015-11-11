@@ -11,6 +11,10 @@ $(document).ready(function()
     makeAjaxPostJsonCall(new YouTubeAPI_Search('news'));
     makeAjaxPostJsonCall(new YouTubeAPI_Search('animals'));
 
-    var newTwitterObject = new TwitterAPI_Object_Creator();
-    makeAjaxPostJsonCall(newTwitterObject);
+
+    makeAjaxPostJsonCall(new TwitterAPI_Object_Creator('music'));
+    makeAjaxPostJsonCall(new TwitterAPI_Object_Creator('sports'));
+    makeAjaxPostJsonCall(new TwitterAPI_Object_Creator('comedy'));
+    makeAjaxPostJsonCall(new TwitterAPI_Object_Creator('news'));
+    makeAjaxPostJsonCall(new TwitterAPI_Object_Creator('animals'));
 });
