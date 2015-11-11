@@ -102,3 +102,13 @@ function searchTwitterDefault()
     makeAjaxPostJsonCall(new TwitterAPI_Object_Creator('news'));
     makeAjaxPostJsonCall(new TwitterAPI_Object_Creator('animals'));
 }
+
+function searchTwitter(categories)
+{
+    $('#twitter-feed>.list-group').html('');
+
+    for (var i = 0; i < categories.length; i++)
+    {
+        makeAjaxPostJsonCall(new TwitterAPI_Object_Creator(categories[i]));
+    }
+}

@@ -101,4 +101,5 @@ function pickCategories() {
 function searchCategories()
 {
     searchYoutube(selected_preferences);
+    searchTwitter(selected_preferences);
 }
