@@ -8,6 +8,7 @@ var flickr = false;
 var twitter = false;
 var channel_options_array = ['Music', 'Sports', 'News', 'Comedy', 'Animals', 'Dance', 'Food', 'DIY', 'Places', 'Trending', 'Virtual Reality'];
 var selected_preferences = [];
+var selected_formatting = [];
 
 
 function saveMediaPreferences() {
@@ -65,16 +66,30 @@ function registerClick(clicked) {
     console.log('it works');
     var justClicked = clicked;
     $(justClicked).toggleClass('clicked');
-    console.log(selected_preferences);
-    console.log(justClicked);
-    console.log($(clicked).text());
-selected_preferences.push($(clicked).text());
-    console.log(selected_preferences);
-    for (var i=0; i<selected_preferences.length; i++) {
-        console.log(selected_preferences[i]);
-
+    console.log($(justClicked).hasClass('clicked'));
+    if($(justClicked).hasClass('clicked')) {
+        console.log($('.clicked').length);
+        if($('.clicked').length <= 5) {
+            console.log($(clicked).text());
+            selected_formatting.push(justClicked);
+            console.log(selected_formatting);
         }
+        else{
+            $(justClicked).toggleClass('clicked');
+            alert('You can only select up to 5 options');}
+    }
+}
 
-    /*selected_preferences.push($(clicked).text());
-    console.log(selected_preferences); */
+
+
+function pickCategories() {
+    for(var i=0; i<selected_formatting.length;) {
+        if(selected_formatting[i].classList.contains('clicked')) {
+            console.log(selected_formatting[i].innerText);
+            var selected_category = selected_formatting[i].innerText;
+            selected_preferences.push(selected_category);
+            i++;
+        }
+        else {i++}
+    }
 }
