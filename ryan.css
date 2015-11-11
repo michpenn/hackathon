@@ -15,7 +15,8 @@
 
 .tweet-item-avatar-image
 {
-    width: 100%;
+    width: 73px;
+    height: 73px;
     float: left;
     display: inline-block;
 }
@@ -28,4 +29,7 @@
 .tweet-item-text
 {
     display: inline-block;
+}
+.push-right {
+	margin-left: 25px;
 }
