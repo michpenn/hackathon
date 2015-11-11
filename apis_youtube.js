@@ -61,7 +61,7 @@ function YouTubeAPI_Skeleton()
 }
 
 
-function YouTubeAPI_Search()
+function YouTubeAPI_Search(search_term)
 {
     /**
      * Enter the URL for this API
@@ -78,7 +78,7 @@ function YouTubeAPI_Search()
      */
     this.api_data =
     {
-        q: 'sports',
+        q: search_term,
         maxResults: 10
     };
 
@@ -92,7 +92,7 @@ function YouTubeAPI_Search()
     {
         if (result.success == true)
         {
-            var list_group = $('#sports-channel-list');
+            var list_group = $('#' + this.api_data.q + '-channel-list');
             list_group.html('');
             for (var i = 0; i < result.video.length; i++)
             {

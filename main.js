@@ -1,11 +1,13 @@
 $(document).ready(function()
 {
-    var youtube_api_search = new YouTubeAPI_Search();
-
     $('#channel-list').on('click', '.youtube-item', function()
     {
         youtubeItemClickHandler($(this));
     });
 
-    makeAjaxPostJsonCall(youtube_api_search);
+    makeAjaxPostJsonCall(new YouTubeAPI_Search('music'));
+    makeAjaxPostJsonCall(new YouTubeAPI_Search('sports'));
+    makeAjaxPostJsonCall(new YouTubeAPI_Search('comedy'));
+    makeAjaxPostJsonCall(new YouTubeAPI_Search('news'));
+    makeAjaxPostJsonCall(new YouTubeAPI_Search('animals'));
 });
