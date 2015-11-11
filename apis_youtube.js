@@ -161,6 +161,15 @@ function youtubeItemClickHandler($item)
     $('#video-section').append(vid_div);
 }
 
+function searchYoutubeDefault()
+{
+    makeAjaxPostJsonCall(new YouTubeAPI_Search('music'));
+    makeAjaxPostJsonCall(new YouTubeAPI_Search('sports'));
+    makeAjaxPostJsonCall(new YouTubeAPI_Search('comedy'));
+    makeAjaxPostJsonCall(new YouTubeAPI_Search('news'));
+    makeAjaxPostJsonCall(new YouTubeAPI_Search('animals'));
+}
+
 function searchYoutube(categories)
 {
     $('.youtube-list-group').html('');

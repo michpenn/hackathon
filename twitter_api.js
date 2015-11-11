@@ -33,7 +33,6 @@ function TwitterAPI_Object_Creator(search)
      */
     this.api_success = function(response)
     {       // retrieve the data for twitter, search string and callback function
-        $('#twitter-feed>.list-group').html('');
         //console.log(response);
         var response_data_object = response.tweets.statuses;
 
@@ -94,3 +93,12 @@ function TwitterAPI_Object_Creator(search)
    };
 }
 
+function searchTwitterDefault()
+{
+    $('#twitter-feed>.list-group').html('');
+    makeAjaxPostJsonCall(new TwitterAPI_Object_Creator('music'));
+    makeAjaxPostJsonCall(new TwitterAPI_Object_Creator('sports'));
+    makeAjaxPostJsonCall(new TwitterAPI_Object_Creator('comedy'));
+    makeAjaxPostJsonCall(new TwitterAPI_Object_Creator('news'));
+    makeAjaxPostJsonCall(new TwitterAPI_Object_Creator('animals'));
+}
