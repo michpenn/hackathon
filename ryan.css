@@ -1,3 +1,14 @@
+strong
+{
+    font-size: 0.8vw;
+}
+
+.tweet-item-text, .youtube-headline, .youtube-uploader, .youtube-views
+{
+    font-size: 0.8vw;
+    margin: 0 0 0 .1vw;
+}
+
 #top-row
 {
     height: 60vh;
@@ -28,4 +39,37 @@
 .tweet-item-text
 {
     display: inline-block;
+}
+
+
+.channel-button
+{
+    width: 100%;
+}
+
+.youtube-item
+{
+    width: 100%;
+}
+.youtube-thumbnail
+{
+    width: 30%;
+    display: inline-block;
+    float: left;
+}
+.youtube-thumbnail>img
+{
+    width: 100%;
+}
+.youtube-info
+{
+    width: 70%;
+    display: inline-block;;
+    float: left;
+}
+
+#youtube-video
+{
+    width: 100%;
+    height: auto;
 }
