@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
+          type="text/css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="modal.js"></script>
+    <link href="modal_style.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Set Preferences
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Let's Get To Know You</h4>
+            </div>
+            <div class="modal-body">
+                <h5>What are you looking for?</h5>
+
+                <form class="form-inline" role="form">
+                    <div class="row">
+                        <div class="form-group">
+                            <input type="checkbox" class="form-control" name="media_choices" id="iTunes"> iTunes
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" class="form-control" name="media_choices" id="videos"> Videos
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <input type="checkbox" class="form-control" name="media_choices" id="pictures"> Pictures
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" class="form-control" name="media_choices" id="twitter"> Twitter Feed
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-info" onclick="saveMediaPreferences()">Save So Far</button>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="pickCategories()">Ready For Fun?</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

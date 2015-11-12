@@ -1,0 +1,473 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="ryan.css">
+    <script src="ajax_call.js"></script>
+    <script src="apis_youtube.js"></script>
+    <script src="twitter_api.js"></script>
+    <script src="main.js"></script>
+    <script src="modal.js"></script>
+    <link href="modal_style.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+</head>
+
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 page-header">
+            <!-- only show this element when the isnt on mobile -->
+            <h1 class="hidden-xs">HACKA-API-ATHON
+                <button type="button" class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
+                    Set Preferences
+                </button>
+            </h1>
+            <!-- only show this element when the user gets to a mobile version -->
+            <h3 class="visible-xs">HACKA-API-ATHON
+                <small class="pull-right">Notifications: <span class="avgGrade label label-default">0</span></small>
+            </h3>
+        </div>
+    </div>
+
+    <div class="row" id="top-row">
+        <div class="col-md-3" id="channel-section">
+            <h3>Channel List</h3>
+            <div id="channel-list" style="height: 90%; overflow: scroll">
+                <ul class="youtube-list-group">
+                    <li class="list-group-item list-group-item-info" data-toggle="collapse" data-target="#music-channel-list">
+                        Music
+                    </li>
+                    <ul id="music-channel-list" class="collapse list-group">
+                        <li class="list-group-item">
+                            <div class="youtube-item">
+                                <div class="youtube-thumbnail">
+                                    <img src="images/youtube_example.jpg">
+                                </div>
+                                <div class="youtube-info">
+                                    <p class="youtube-headline"><strong>Bulls Learn to Not Suck</strong></p>
+                                    <p class="youtube-uploader">ConcernedBullsFan</p>
+                                    <p class="youtube-views">24,901 views</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="youtube-item">
+                                <div class="youtube-thumbnail">
+                                    <img src="images/youtube_example.jpg">
+                                </div>
+                                <div class="youtube-info">
+                                    <p class="youtube-headline"><strong>Bulls Learn to Not Suck</strong></p>
+                                    <p class="youtube-uploader">ConcernedBullsFan</p>
+                                    <p class="youtube-views">24,901 views</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="youtube-item">
+                                <div class="youtube-thumbnail">
+                                    <img src="images/youtube_example.jpg">
+                                </div>
+                                <div class="youtube-info">
+                                    <p class="youtube-headline"><strong>Bulls Learn to Not Suck</strong></p>
+                                    <p class="youtube-uploader">ConcernedBullsFan</p>
+                                    <p class="youtube-views">24,901 views</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="youtube-item">
+                                <div class="youtube-thumbnail">
+                                    <img src="images/youtube_example.jpg">
+                                </div>
+                                <div class="youtube-info">
+                                    <p class="youtube-headline"><strong>Bulls Learn to Not Suck</strong></p>
+                                    <p class="youtube-uploader">ConcernedBullsFan</p>
+                                    <p class="youtube-views">24,901 views</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <li class="list-group-item list-group-item-info" data-toggle="collapse" data-target="#sports-channel-list">
+                        Sports
+                    </li>
+                    <ul id="sports-channel-list" class="collapse list-group">
+                    </ul>
+
+                    <li class="list-group-item list-group-item-info" data-toggle="collapse" data-target="#comedy-channel-list">
+                        Comedy
+                    </li>
+                    <ul id="comedy-channel-list" class="collapse list-group">
+                        <li class="list-group-item">
+                            <div class="youtube-item">
+                                <div class="youtube-thumbnail">
+                                    <img src="images/youtube_example.jpg">
+                                </div>
+                                <div class="youtube-info">
+                                    <p class="youtube-headline"><strong>Bulls Learn to Not Suck</strong></p>
+                                    <p class="youtube-uploader">ConcernedBullsFan</p>
+                                    <p class="youtube-views">24,901 views</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="youtube-item">
+                                <div class="youtube-thumbnail">
+                                    <img src="images/youtube_example.jpg">
+                                </div>
+                                <div class="youtube-info">
+                                    <p class="youtube-headline"><strong>Bulls Learn to Not Suck</strong></p>
+                                    <p class="youtube-uploader">ConcernedBullsFan</p>
+                                    <p class="youtube-views">24,901 views</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="youtube-item">
+                                <div class="youtube-thumbnail">
+                                    <img src="images/youtube_example.jpg">
+                                </div>
+                                <div class="youtube-info">
+                                    <p class="youtube-headline"><strong>Bulls Learn to Not Suck</strong></p>
+                                    <p class="youtube-uploader">ConcernedBullsFan</p>
+                                    <p class="youtube-views">24,901 views</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="youtube-item">
+                                <div class="youtube-thumbnail">
+                                    <img src="images/youtube_example.jpg">
+                                </div>
+                                <div class="youtube-info">
+                                    <p class="youtube-headline"><strong>Bulls Learn to Not Suck</strong></p>
+                                    <p class="youtube-uploader">ConcernedBullsFan</p>
+                                    <p class="youtube-views">24,901 views</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <li class="list-group-item list-group-item-info" data-toggle="collapse" data-target="#news-channel-list">
+                        News
+                    </li>
+                    <ul id="news-channel-list" class="collapse list-group">
+                        <li class="list-group-item">
+                            <div class="youtube-item">
+                                <div class="youtube-thumbnail">
+                                    <img src="images/youtube_example.jpg">
+                                </div>
+                                <div class="youtube-info">
+                                    <p class="youtube-headline"><strong>Bulls Learn to Not Suck</strong></p>
+                                    <p class="youtube-uploader">ConcernedBullsFan</p>
+                                    <p class="youtube-views">24,901 views</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="youtube-item">
+                                <div class="youtube-thumbnail">
+                                    <img src="images/youtube_example.jpg">
+                                </div>
+                                <div class="youtube-info">
+                                    <p class="youtube-headline"><strong>Bulls Learn to Not Suck</strong></p>
+                                    <p class="youtube-uploader">ConcernedBullsFan</p>
+                                    <p class="youtube-views">24,901 views</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="youtube-item">
+                                <div class="youtube-thumbnail">
+                                    <img src="images/youtube_example.jpg">
+                                </div>
+                                <div class="youtube-info">
+                                    <p class="youtube-headline"><strong>Bulls Learn to Not Suck</strong></p>
+                                    <p class="youtube-uploader">ConcernedBullsFan</p>
+                                    <p class="youtube-views">24,901 views</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="youtube-item">
+                                <div class="youtube-thumbnail">
+                                    <img src="images/youtube_example.jpg">
+                                </div>
+                                <div class="youtube-info">
+                                    <p class="youtube-headline"><strong>Bulls Learn to Not Suck</strong></p>
+                                    <p class="youtube-uploader">ConcernedBullsFan</p>
+                                    <p class="youtube-views">24,901 views</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <li class="list-group-item list-group-item-info" data-toggle="collapse" data-target="#animals-channel-list">
+                        Animals
+                    </li>
+                    <ul id="animals-channel-list" class="collapse list-group">
+                        <li class="list-group-item">
+                            <div class="youtube-item">
+                                <div class="youtube-thumbnail">
+                                    <img src="images/youtube_example.jpg">
+                                </div>
+                                <div class="youtube-info">
+                                    <p class="youtube-headline"><strong>Bulls Learn to Not Suck</strong></p>
+                                    <p class="youtube-uploader">ConcernedBullsFan</p>
+                                    <p class="youtube-views">24,901 views</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="youtube-item">
+                                <div class="youtube-thumbnail">
+                                    <img src="images/youtube_example.jpg">
+                                </div>
+                                <div class="youtube-info">
+                                    <p class="youtube-headline"><strong>Bulls Learn to Not Suck</strong></p>
+                                    <p class="youtube-uploader">ConcernedBullsFan</p>
+                                    <p class="youtube-views">24,901 views</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="youtube-item">
+                                <div class="youtube-thumbnail">
+                                    <img src="images/youtube_example.jpg">
+                                </div>
+                                <div class="youtube-info">
+                                    <p class="youtube-headline"><strong>Bulls Learn to Not Suck</strong></p>
+                                    <p class="youtube-uploader">ConcernedBullsFan</p>
+                                    <p class="youtube-views">24,901 views</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="youtube-item">
+                                <div class="youtube-thumbnail">
+                                    <img src="images/youtube_example.jpg">
+                                </div>
+                                <div class="youtube-info">
+                                    <p class="youtube-headline"><strong>Bulls Learn to Not Suck</strong></p>
+                                    <p class="youtube-uploader">ConcernedBullsFan</p>
+                                    <p class="youtube-views">24,901 views</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6" id="video-section" style="overflow: hidden">
+            <div id="video-section-div">
+                <h3 id="data-item-header">Header for Video/Picture Here</h3>
+                <iframe id='youtube-video' src="https://www.youtube.com/embed/GZe3G9saU98" frameborder="0"></iframe>
+            </div>
+        </div>
+        <div class="col-md-3" id="twitter-section">
+            <h3>Twitter Feed</h3>
+            <div id="twitter-feed" style="height: 90%; overflow: scroll">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="https://twitter.com/RonBurgundy" target="_blank">
+                            <div class="tweet-item">
+                                <div class="row tweet-item-avatar">
+                                    <div class="col-md-3">
+                                        <img src='images/ron_burgundy.jpeg' class="tweet-item-avatar-image">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <strong class="tweet-item-fullname">Ron Burgundy</strong>
+                                        <span class="tweet-item-username">@RonBurgundy</span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <span class="tweet-item-timestamp">Jun 21</span>
+                                    </div>
+                                </div>
+                                <div class="tweet-item-text">
+                                    <p class="tweet-item-text">
+                                        I just drank warm sour milk in a phonebooth.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://twitter.com/RonBurgundy" target="_blank">
+                            <div class="tweet-item">
+                                <div class="row tweet-item-avatar">
+                                    <div class="col-md-3">
+                                        <img src='images/ron_burgundy.jpeg' class="tweet-item-avatar-image">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <strong class="tweet-item-fullname">Ron Burgundy</strong>
+                                        <span class="tweet-item-username">@RonBurgundy</span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <span class="tweet-item-timestamp">Jun 21</span>
+                                    </div>
+                                </div>
+                                <div class="tweet-item-text">
+                                    <p class="tweet-item-text">
+                                        I just drank warm sour milk in a phonebooth.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://twitter.com/RonBurgundy" target="_blank">
+                            <div class="tweet-item">
+                                <div class="row tweet-item-avatar">
+                                    <div class="col-md-3">
+                                        <img src='images/ron_burgundy.jpeg' class="tweet-item-avatar-image">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <strong class="tweet-item-fullname">Ron Burgundy</strong>
+                                        <span class="tweet-item-username">@RonBurgundy</span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <span class="tweet-item-timestamp">Jun 21</span>
+                                    </div>
+                                </div>
+                                <div class="tweet-item-text">
+                                    <p class="tweet-item-text">
+                                        I just drank warm sour milk in a phonebooth.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://twitter.com/RonBurgundy" target="_blank">
+                            <div class="tweet-item">
+                                <div class="row tweet-item-avatar">
+                                    <div class="col-md-3">
+                                        <img src='images/ron_burgundy.jpeg' class="tweet-item-avatar-image">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <strong class="tweet-item-fullname">Ron Burgundy</strong>
+                                        <span class="tweet-item-username">@RonBurgundy</span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <span class="tweet-item-timestamp">Jun 21</span>
+                                    </div>
+                                </div>
+                                <div class="tweet-item-text">
+                                    <p class="tweet-item-text">
+                                        I just drank warm sour milk in a phonebooth.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="bottom-row" style="height: 20vh">
+        <div class="col-md-8 col-md-offset-1" style="height: 100%">
+            <h3>Flickr Gallery</h3>
+            <div id="flickr-carousel" style="height: 90%; width: 100%; overflow: scroll">
+
+            </div>
+        </div>
+        <div class="col-md-3" style="height: 100%">
+            <h3>iTunes Suggests:</h3>
+            <div id="itunes-suggestions" style="height: 90%; overflow: scroll">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="https://itunes.apple.com/us/app/clash-of-clans/id529479190" target="_blank">
+                            <div class="itunes-item">
+                                <div class="itunes-thumbnail">
+                                    <img src="images/coc.jpeg">
+                                </div>
+                                <div class="itunes-info">
+                                    <p class="itunes-title"><strong>Clash of Clans</strong></p>
+                                    <p class="itunes-publisher">Supercell</p>
+                                    <p class="itunes-price">Free</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://itunes.apple.com/us/app/clash-of-clans/id529479190" target="_blank">
+                            <div class="itunes-item">
+                                <div class="itunes-thumbnail">
+                                    <img src="images/coc.jpeg">
+                                </div>
+                                <div class="itunes-info">
+                                    <p class="itunes-title"><strong>Clash of Clans</strong></p>
+                                    <p class="itunes-publisher">Supercell</p>
+                                    <p class="itunes-price">Free</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://itunes.apple.com/us/app/clash-of-clans/id529479190" target="_blank">
+                            <div class="itunes-item">
+                                <div class="itunes-thumbnail">
+                                    <img src="images/coc.jpeg">
+                                </div>
+                                <div class="itunes-info">
+                                    <p class="itunes-title"><strong>Clash of Clans</strong></p>
+                                    <p class="itunes-publisher">Supercell</p>
+                                    <p class="itunes-price">Free</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Let's Get To Know You</h4>
+            </div>
+            <div class="modal-body">
+                <h5>What are you looking for?</h5>
+
+                <form class="form-inline" role="form">
+                    <div class="row">
+                        <div class="form-group">
+                            <input type="checkbox" class="form-control" name="media_choices" id="iTunes"> iTunes
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" class="form-control" name="media_choices" id="videos"> Videos
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <input type="checkbox" class="form-control" name="media_choices" id="pictures"> Pictures
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" class="form-control" name="media_choices" id="twitter"> Twitter Feed
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-info" onclick="saveMediaPreferences()">Save So Far</button>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="pickCategories()">Ready For Fun?</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
