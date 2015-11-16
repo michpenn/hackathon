@@ -47,6 +47,12 @@ strong
     width: 100%;
 }
 
+.youtube-list-group
+{
+    width: 100%;
+    padding: 0;
+}
+
 .youtube-item, .itunes-item
 {
     width: 100%;
